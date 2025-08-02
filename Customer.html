@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ฟอร์มสั่งซื้อของที่ระลึก 30 ปี สาขาวิทยาการคอมพิวเตอร์</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-green-200 via-green-100 to-white min-h-screen flex items-center justify-center p-6">
+<div class="max-w-2xl w-full bg-white p-8 rounded-3xl shadow-2xl border border-green-400 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-300 rounded-t-3xl"></div>
+    <h1 class="font-serif text-3xl text-center text-black mb-8 drop-shadow-sm">
+      ฟอร์มสั่งซื้อของที่ระลึก 30 ปี <br> สาขาวิทยาการคอมพิวเตอร์
+    </h1>
+    <div class="max-w-2xl w-full bg-white p-8 rounded-3xl shadow-2xl border border-green-400 relative overflow-hidden">
+    <div class="mb-6">
+      <button type="button" onclick="openModal()"
+        class="block text-center w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold shadow-lg hover:from-blue-600 hover:to-blue-700 transform hover:-translate-y-0.5 transition duration-300">
+        🔍 ดูสินค้าตัวอย่าง
+      </button>
+    </div>
+    <form class="space-y-6">
+      <div>
+        <label class="block font-semibold mb-1">ชื่อ-นามสกุล</label>
+        <input type="text" class="w-full p-3 border rounded-xl " placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+      </div>
+      <div>
+        <label class="block font-semibold ext-black mb-1">ที่อยู่จัดส่ง</label>
+        <textarea name="address" rows="3" placeholder="กรุณากรอกที่อยู่ สำหรับการจัดส่ง" 
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition"></textarea>
+      </div>
+      <div>
+        <label class="block font-semibold ext-black mb-1">เบอร์โทร</label>
+        <input type="tel" name="phone" placeholder="กรุณากรอกเบอร์โทร 0xx-xxxxxxx" required
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+      </div>
+      <div>
+      <label class="block font-semibold text-black mb-1">เลือกสินค้าที่ต้องการ</label>
+        <select name="product" required
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+          <option>เสื้อ ราคา 250 บาท</option>
+          <option>กระเป๋า ราคา 100 บาท</option>
+          <option>แก้ว ราคา 150 บาท</option>
+          <option>หมวก ราคา 100 บาท</option>
+          <option>ร่ม ราคา 150 บาท</option>
+          <option>เข็มกลัด ราคา 100 บาท</option>
+          <option>สมุด ราคา 50 บาท</option>
+          <option>ปากกา ราคา 50 บาท</option>
+        </select>
+      </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div>
+        <label class="block font-semibold text-black mb-1">เลือกขนาด (สำหรับเสื้อ)</label>
+        <select name="product"
+        class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>2XL</option>
+            </select>
+        </div>
+         <div>
+        <label class="block font-semibold text-black mb-1">สี (สำหรับเสื้อ)</label>
+        <select name="product"
+        class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+            <option>ดำ</option>
+            <option>ขาว</option>
+            <option>กรม</option>
+            <option>ฟ้า</option>
+            </select>
+        </div>
+        <div>
+            <label class="block font-semibold text-black mb-1">จำนวน</label>
+            <input type="number" name="quantity" id="quantity" required
+            class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+        </div>
+    </div>
+      <div>
+        <label class="block font-semibold ttext-black mb-1">วันที่สั่งซื้อ</label>
+        <input type="date" name="orderDate" required
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+      </div>
+      <div>
+        <label class="block font-semibold ttext-black mb-1">ช่องทางชำระเงิน</label>
+        <select name="payment" required
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+          <option>โอนผ่านธนาคาร</option>
+          <option>พร้อมเพย์</option>
+          <option>ชำระเงินปลายทาง</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold text-black mb-1">อัปโหลดสลิปชำระเงิน</label>
+        <input type="file" name="slip" required
+          class="w-full p-2 border border-black rounded-xl cursor-pointer focus:ring-2 focus:ring-black focus:border-black outline-none transition bg-white">
+      </div>
+      <div>
+        <label class="block font-semibold text-black mb-1">วิธีรับสินค้า</label>
+        <select name="delivery" required
+          class="w-full p-3 border border-black rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition">
+          <option>จัดส่งถึงบ้าน</option>
+          <option>รับเองที่สาขา</option>
+        </select>
+      </div>
+
+      <button type="submit"
+        class="w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold shadow-lg hover:from-green-600 hover:to-green-700 transform hover:-translate-y-0.5 transition duration-300">
+        ✅ ยืนยันการสั่งซื้อ
+      </button>
+    </form>
+  </div>
+  <div id="productModal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-2xl shadow-xl max-w-3xl w-11/12 relative">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+
+      <h2 class="text-2xl font-bold text-center text-green-700 mb-4">🛍 ตัวอย่างสินค้า</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="text-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnlI80c5z9QGJLSGGHCniYXIhDVSLQQXO9Sg&s" alt="เสื้อ" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">เสื้อ ราคา 250 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj1vIOOJ7GZ0RPMGnaB1lo00GuAJEZZ573sg&s" alt="กระเป๋า" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">กระเป๋า ราคา 100 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnqPQd4KfAUma-RqTMsz52PmroC1TWaGqcw&s" alt="แก้ว" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">แก้ว ราคา 150 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://tsmactive.com/image/cache/catalog/65t/Omnium%20Portable%20Trainer/Headsweats-Race-Hats-Black-550x550.jpg" alt="หมวก" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">หมวก ราคา 100 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://giftwiseasia.com/wp-content/uploads/2023/12/Giftwise-Dec7-01.png" alt="หมวก" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">ร่ม ราคา 150 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://www.shutterstock.com/image-illustration/white-badge-pin-brooch-mockup-260nw-649993006.jpg" alt="หมวก" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">เข็มกลัด ราคา 100 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://img.freepik.com/premium-photo/blank-notebook-white-background_140916-6447.jpg" alt="หมวก" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">สมุด ราคา 50 บาท</p>
+        </div>
+        <div class="text-center">
+          <img src="https://stationerymine.com/media/catalog/product/cache/cf3f2243ef4940fd5c66f2ff035145ac/2/1/217853.jpg" alt="หมวก" 
+          class="w-full h-28 object-cover rounded-xl shadow-md hover:scale-105 transition">
+          <p class="mt-2 text-sm font-medium text-green-700">ปากกา ราคา 50 บาท</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('productModal').classList.remove('hidden');
+      document.getElementById('productModal').classList.add('flex');
+    }
+    function closeModal() {
+      document.getElementById('productModal').classList.remove('flex');
+      document.getElementById('productModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
+
